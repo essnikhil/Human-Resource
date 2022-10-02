@@ -11,14 +11,14 @@ package model;
 public class Employee {
     
     private String name;
-    private int eid;
-    private int age;
+    private String eid;
+    private String age;
     private String gender;
     private String date;
     private String level;
     private String team_info;
     private String title;
-    private long phone;
+    private String phone;
     private String email;
     private String photo;
 
@@ -30,19 +30,19 @@ public class Employee {
         this.name = name;
     }
 
-    public int getEid() {
+    public String getEid() {
         return eid;
     }
 
-    public void setEid(int eid) {
+    public void setEid(String eid) {
         this.eid = eid;
     }
 
-    public int getAge() {
+    public String getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(String age) {
         this.age = age;
     }
 
@@ -86,11 +86,11 @@ public class Employee {
         this.title = title;
     }
 
-    public long getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(long phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 

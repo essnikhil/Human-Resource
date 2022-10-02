@@ -34,6 +34,7 @@ public class CreatePanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jBtnGroup = new javax.swing.ButtonGroup();
         jTitle = new javax.swing.JLabel();
         jName = new javax.swing.JLabel();
         jEmpId = new javax.swing.JLabel();
@@ -51,11 +52,14 @@ public class CreatePanel extends javax.swing.JPanel {
         jTxtNum = new javax.swing.JTextField();
         jTxtAge = new javax.swing.JTextField();
         jTxtEmpId = new javax.swing.JTextField();
-        jTxtGender = new javax.swing.JTextField();
         jTxtDate = new javax.swing.JTextField();
         jTxtInfo = new javax.swing.JTextField();
         jTxtLevel = new javax.swing.JTextField();
         jBtnSave = new javax.swing.JButton();
+        jRBMale = new javax.swing.JRadioButton();
+        jRBFemale = new javax.swing.JRadioButton();
+        jBtnClear = new javax.swing.JButton();
+        jRadioButton1 = new javax.swing.JRadioButton();
 
         setPreferredSize(new java.awt.Dimension(700, 600));
 
@@ -119,12 +123,6 @@ public class CreatePanel extends javax.swing.JPanel {
             }
         });
 
-        jTxtGender.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTxtGenderActionPerformed(evt);
-            }
-        });
-
         jTxtDate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTxtDateActionPerformed(evt);
@@ -150,6 +148,27 @@ public class CreatePanel extends javax.swing.JPanel {
             }
         });
 
+        jBtnGroup.add(jRBMale);
+        jRBMale.setText("Male");
+        jRBMale.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRBMaleActionPerformed(evt);
+            }
+        });
+
+        jBtnGroup.add(jRBFemale);
+        jRBFemale.setText("Female");
+
+        jBtnClear.setText("Clear");
+        jBtnClear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnClearActionPerformed(evt);
+            }
+        });
+
+        jBtnGroup.add(jRadioButton1);
+        jRadioButton1.setText("Prefer not to say");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -172,7 +191,7 @@ public class CreatePanel extends javax.swing.JPanel {
                     .addComponent(jEmpId)
                     .addComponent(jAge))
                 .addGap(42, 42, 42)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jTxtAge, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -184,15 +203,22 @@ public class CreatePanel extends javax.swing.JPanel {
                             .addComponent(jTxtName, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTxtInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTxtDate, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
+                        .addComponent(jBtnClear, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jTxtGender, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 164, Short.MAX_VALUE)
-                        .addComponent(jBtnSave)
-                        .addGap(51, 51, 51))))
+                        .addComponent(jRBMale)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jRBFemale)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jRadioButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jBtnSave)))
+                .addGap(51, 51, 51))
         );
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jAge, jDate, jEmail, jEmpId, jGender, jInfo, jLevel, jName, jNum, jPosTitle});
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jBtnClear, jBtnSave});
 
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -214,16 +240,24 @@ public class CreatePanel extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jGender)
-                    .addComponent(jTxtGender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jBtnSave))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jDate)
-                    .addComponent(jTxtDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLevel)
-                    .addComponent(jTxtLevel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jBtnSave)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jRBFemale)
+                        .addComponent(jRBMale)
+                        .addComponent(jRadioButton1)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jDate)
+                            .addComponent(jTxtDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLevel)
+                            .addComponent(jTxtLevel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(jBtnClear)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jInfo)
@@ -240,7 +274,7 @@ public class CreatePanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jEmail)
                     .addComponent(jTxtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(153, Short.MAX_VALUE))
+                .addContainerGap(147, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -268,10 +302,6 @@ public class CreatePanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTxtEmpIdActionPerformed
 
-    private void jTxtGenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxtGenderActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTxtGenderActionPerformed
-
     private void jTxtDateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxtDateActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTxtDateActionPerformed
@@ -287,49 +317,127 @@ public class CreatePanel extends javax.swing.JPanel {
     private void jBtnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnSaveActionPerformed
         
         String name=jTxtName.getText();
-        int eid=Integer.parseInt(jTxtEmpId.getText());
-        int age=Integer.parseInt(jTxtAge.getText());
-        String gender=jTxtGender.getText();
+        String eid=jTxtEmpId.getText();
+        String age=jTxtAge.getText();
+        //String gender=jTxtGender.getText();
+        //String gender=jBtnGroup.getSelection().getActionCommand();
+        String gender="Other";
+        if(jRBMale.isSelected())
+            gender="Male";
+        else if(jRBFemale.isSelected())
+            gender="Female";
         String date=jTxtDate.getText();
         String level=jTxtLevel.getText();
         String team_info=jTxtInfo.getText();
         String title=jTxtPosTitle.getText();
-        long phone=Long.parseLong(jTxtNum.getText());
+        String phone=jTxtNum.getText();
         String email=jTxtEmail.getText();
         //String photo;
+        if(validation()){
+            Employee e=list.addEmployee();
         
-        Employee e=list.addEmployee();
+            e.setName(name);
+            e.setEid(eid);
+            e.setAge(age);
+            e.setGender(gender);
+            e.setDate(date);
+            e.setLevel(level);
+            e.setTeam_info(team_info);
+            e.setTitle(title);
+            e.setPhone(phone);
+            e.setEmail(email);
         
-        e.setName(name);
-        e.setEid(eid);
-        e.setAge(age);
-        e.setGender(gender);
-        e.setDate(date);
-        e.setLevel(level);
-        e.setTeam_info(team_info);
-        e.setTitle(title);
-        e.setPhone(phone);
-        e.setEmail(email);
+            JOptionPane.showMessageDialog(this, "New Employee Added");
+
+            jTxtName.setText("");
+            jTxtEmpId.setText("");
+            jTxtAge.setText("");
+            //jTxtGender.setText("");
+            jRBMale.setSelected(false);
+            jRBFemale.setSelected(false);
+            jTxtDate.setText("");
+            jTxtLevel.setText("");
+            jTxtInfo.setText("");
+            jTxtPosTitle.setText("");
+            jTxtNum.setText("");
+            jTxtEmail.setText("");
+            //String photo;
+        }
         
-        JOptionPane.showMessageDialog(this, "New Employee Added");
         
+    }//GEN-LAST:event_jBtnSaveActionPerformed
+
+    private void jRBMaleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRBMaleActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRBMaleActionPerformed
+
+    private void jBtnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnClearActionPerformed
         jTxtName.setText("");
         jTxtEmpId.setText("");
         jTxtAge.setText("");
-        jTxtGender.setText("");
+        //jTxtGender.setText("");
+        jRBMale.setSelected(false);
+        jRBFemale.setSelected(false);
         jTxtDate.setText("");
         jTxtLevel.setText("");
         jTxtInfo.setText("");
         jTxtPosTitle.setText("");
         jTxtNum.setText("");
         jTxtEmail.setText("");
-        //String photo;
-        
-    }//GEN-LAST:event_jBtnSaveActionPerformed
-
+    }//GEN-LAST:event_jBtnClearActionPerformed
+    
+    public boolean validation(){
+        boolean res=true;
+        if(String.valueOf(jTxtEmpId.getText()).equals("")){
+            res=false;
+            JOptionPane.showMessageDialog(this, "Please fill the Employee Id");
+            jTxtEmpId.requestFocus();
+        }else if(jTxtName.getText().equals("")){
+            res=false;
+            JOptionPane.showMessageDialog(this, "Please fill the Employee Name");
+            jTxtName.requestFocus();
+        }else if(String.valueOf(jTxtAge.getText()).equals("")){
+            res=false;
+            JOptionPane.showMessageDialog(this, "Please fill the Employee Age");
+            jTxtAge.requestFocus();
+        }else if(jRBMale.isSelected() && jRBFemale.isSelected()){
+            res=false;
+            JOptionPane.showMessageDialog(this, "Please fill the Employee Gender");
+            //jTxtGender.requestFocus();
+        }else if(jTxtDate.getText().equals("")){
+            res=false;
+            JOptionPane.showMessageDialog(this, "Please fill the Joining Date");
+            jTxtDate.requestFocus();
+        }else if(jTxtLevel.getText().equals("")){
+            res=false;
+            JOptionPane.showMessageDialog(this, "Please fill the Level");
+            jTxtLevel.requestFocus();
+        }else if(jTxtInfo.getText().equals("")){
+            res=false;
+            JOptionPane.showMessageDialog(this, "Please fill the Team Information of the Employee");
+            jTxtInfo.requestFocus();
+        }else if(jTxtPosTitle.getText().equals("")){
+            res=false;
+            JOptionPane.showMessageDialog(this, "Please fill the Position Title of the Employee");
+            jTxtPosTitle.requestFocus();
+        }else if(jTxtNum.getText().equals("")){
+            res=false;
+            JOptionPane.showMessageDialog(this, "Please fill the Phone Number of the Employee");
+            jTxtNum.requestFocus();
+        }else if(jTxtEmail.getText().equals("")){
+            res=false;
+            JOptionPane.showMessageDialog(this, "Please fill the eMail of the Employee");
+            jTxtEmail.requestFocus();
+        }
+        return res;
+    }
+   
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jAge;
+    private javax.swing.JButton jBtnClear;
+    private javax.swing.ButtonGroup jBtnGroup;
     private javax.swing.JButton jBtnSave;
     private javax.swing.JLabel jDate;
     private javax.swing.JLabel jEmail;
@@ -340,12 +448,14 @@ public class CreatePanel extends javax.swing.JPanel {
     private javax.swing.JLabel jName;
     private javax.swing.JLabel jNum;
     private javax.swing.JLabel jPosTitle;
+    private javax.swing.JRadioButton jRBFemale;
+    private javax.swing.JRadioButton jRBMale;
+    private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JLabel jTitle;
     private javax.swing.JTextField jTxtAge;
     private javax.swing.JTextField jTxtDate;
     private javax.swing.JTextField jTxtEmail;
     private javax.swing.JTextField jTxtEmpId;
-    private javax.swing.JTextField jTxtGender;
     private javax.swing.JTextField jTxtInfo;
     private javax.swing.JTextField jTxtLevel;
     private javax.swing.JTextField jTxtName;

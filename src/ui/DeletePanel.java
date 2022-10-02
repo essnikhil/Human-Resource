@@ -4,6 +4,7 @@
  */
 package ui;
 
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import model.Employee;
@@ -13,7 +14,7 @@ import model.Employee_list;
  *
  * @author essni
  */
-public class ViewPanel extends javax.swing.JPanel {
+public class DeletePanel extends javax.swing.JPanel {
 
     /**
      * Creates new form ViewPanel
@@ -21,11 +22,15 @@ public class ViewPanel extends javax.swing.JPanel {
     
     Employee_list list=new Employee_list();
     
-    public ViewPanel(Employee_list list) {
+    public DeletePanel(Employee_list list) {
         initComponents();
         
         this.list=list;
         populateEmployees();
+        
+        ImageIcon img=new ImageIcon("D:\\nikhil\\Certificates id\\photos");
+        jPhoto.setIcon(img);
+      
     }
 
     
@@ -43,7 +48,7 @@ public class ViewPanel extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable = new javax.swing.JTable();
         jBtnDelete = new javax.swing.JButton();
-        jBtnUpdate = new javax.swing.JButton();
+        jPhoto = new javax.swing.JLabel();
 
         jTitle.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -51,13 +56,13 @@ public class ViewPanel extends javax.swing.JPanel {
 
         jTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "EId", "Name", "Title", "Phone", "email"
+                "EId", "Name", "Title", "Phone", "email", "Gender"
             }
         ));
         jScrollPane1.setViewportView(jTable);
@@ -66,13 +71,6 @@ public class ViewPanel extends javax.swing.JPanel {
         jBtnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBtnDeleteActionPerformed(evt);
-            }
-        });
-
-        jBtnUpdate.setText("Update");
-        jBtnUpdate.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBtnUpdateActionPerformed(evt);
             }
         });
 
@@ -87,12 +85,12 @@ public class ViewPanel extends javax.swing.JPanel {
                         .addComponent(jTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 688, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jScrollPane1))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jBtnUpdate)
-                        .addGap(18, 18, 18)
-                        .addComponent(jBtnDelete)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jPhoto, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jBtnDelete))
+                            .addComponent(jScrollPane1))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -105,8 +103,8 @@ public class ViewPanel extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jBtnDelete)
-                    .addComponent(jBtnUpdate))
-                .addContainerGap(174, Short.MAX_VALUE))
+                    .addComponent(jPhoto, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(87, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -125,14 +123,10 @@ public class ViewPanel extends javax.swing.JPanel {
         
     }//GEN-LAST:event_jBtnDeleteActionPerformed
 
-    private void jBtnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnUpdateActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jBtnUpdateActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBtnDelete;
-    private javax.swing.JButton jBtnUpdate;
+    private javax.swing.JLabel jPhoto;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable;
     private javax.swing.JLabel jTitle;
@@ -143,12 +137,13 @@ public class ViewPanel extends javax.swing.JPanel {
         model.setRowCount(0);
       
         for(Employee e:list.getEmp_list()){
-            Object[] col=new Object[5];
+            Object[] col=new Object[6];
             col[0]=e;
             col[1]=e.getName();
             col[2]=e.getTitle();
             col[3]=e.getPhone();
             col[4]=e.getEmail();
+            col[5]=e.getGender();
             
             model.addRow(col);
         }

@@ -39,6 +39,7 @@ public class JFrame extends javax.swing.JFrame {
         btnCreate = new javax.swing.JButton();
         btnView = new javax.swing.JButton();
         jBtnSearch = new javax.swing.JButton();
+        jBtnUpdate = new javax.swing.JButton();
         workSpace = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -64,6 +65,13 @@ public class JFrame extends javax.swing.JFrame {
             }
         });
 
+        jBtnUpdate.setText("Update");
+        jBtnUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnUpdateActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout controlPanelLayout = new javax.swing.GroupLayout(controlPanel);
         controlPanel.setLayout(controlPanelLayout);
         controlPanelLayout.setHorizontalGroup(
@@ -73,7 +81,8 @@ public class JFrame extends javax.swing.JFrame {
                 .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnCreate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnView, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jBtnSearch, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jBtnSearch, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jBtnUpdate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -88,7 +97,9 @@ public class JFrame extends javax.swing.JFrame {
                 .addComponent(btnView)
                 .addGap(18, 18, 18)
                 .addComponent(jBtnSearch)
-                .addContainerGap(516, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jBtnUpdate)
+                .addContainerGap(469, Short.MAX_VALUE))
         );
 
         splitPane.setLeftComponent(controlPanel);
@@ -134,7 +145,7 @@ public class JFrame extends javax.swing.JFrame {
 
     private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
         
-        ViewPanel emps=new ViewPanel(list);
+        DeletePanel emps=new DeletePanel(list);
         splitPane.setRightComponent(emps);
         
     }//GEN-LAST:event_btnViewActionPerformed
@@ -143,6 +154,11 @@ public class JFrame extends javax.swing.JFrame {
         SearchPanel search=new SearchPanel(list);
         splitPane.setRightComponent(search);
     }//GEN-LAST:event_jBtnSearchActionPerformed
+
+    private void jBtnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnUpdateActionPerformed
+        UpdatePanel update=new UpdatePanel(list);
+        splitPane.setRightComponent(update);
+    }//GEN-LAST:event_jBtnUpdateActionPerformed
 
     /**
      * @param args the command line arguments
@@ -184,6 +200,7 @@ public class JFrame extends javax.swing.JFrame {
     private javax.swing.JButton btnView;
     private javax.swing.JPanel controlPanel;
     private javax.swing.JButton jBtnSearch;
+    private javax.swing.JButton jBtnUpdate;
     private javax.swing.JSplitPane splitPane;
     private javax.swing.JPanel workSpace;
     // End of variables declaration//GEN-END:variables
